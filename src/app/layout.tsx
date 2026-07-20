@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { DashboardConditionalLayout } from "@/components/layout/DashboardConditionalLayout";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin", "vietnamese"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="vi">
+      <body className={`${inter.className} ${inter.variable} ${playfair.variable} min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased`}>
+        <DashboardConditionalLayout>
+          {children}
+        </DashboardConditionalLayout>
+      </body>
     </html>
   );
 }
