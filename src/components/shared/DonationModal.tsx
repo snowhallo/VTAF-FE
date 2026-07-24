@@ -1,8 +1,6 @@
-"use client"
-
 import { useState } from "react"
-import { X, User, Mail, Eye, EyeOff, Loader2, Check, Copy, ChevronRight, MessageSquare } from "lucide-react"
-import Link from "next/link"
+import { X, User, Mail, Loader2, Check, Copy, ChevronRight, MessageSquare } from "lucide-react"
+import { Link } from "react-router-dom"
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 interface DonationModalProps {
@@ -85,7 +83,7 @@ function DonationForm({
         {/* Project info */}
         <div className="bg-slate-50 rounded-lg px-4 py-3 text-sm border border-slate-100">
           <p className="text-slate-500 text-xs mb-0.5">Bạn đang ủng hộ</p>
-          <p className="font-semibold text-slate-900 leading-snug line-clamp-2">{projectTitle}</p>
+          <p className="font-semibold text-[#006B3F] leading-snug line-clamp-2">{projectTitle}</p>
           <p className="text-xs mt-1">
             Còn cần: <span className="text-[#C21A30] font-bold">{formatVND(remainingAmount)}đ</span>
           </p>
@@ -164,9 +162,9 @@ function DonationForm({
           <p className="text-sm font-semibold text-slate-800 mb-1">Thông tin nhà tài trợ</p>
           <p className="text-xs text-slate-500 mb-3">
             Vui lòng{" "}
-            <Link href="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng ký</Link>
+            <Link to="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng ký</Link>
             {" "}hoặc{" "}
-            <Link href="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng nhập</Link>
+            <Link to="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng nhập</Link>
             {" "}để theo dõi hành trình ủng hộ của mình.
           </p>
 
@@ -235,9 +233,9 @@ function DonationForm({
             />
             <span className="text-xs text-slate-600 leading-relaxed">
               Bằng việc ủng hộ, bạn đã đồng ý với{" "}
-              <a href="/terms" target="_blank" className="text-[#006B3F] hover:underline font-medium">
+              <Link to="/terms" target="_blank" className="text-[#006B3F] hover:underline font-medium">
                 Điều khoản &amp; Điều kiện
-              </a>
+              </Link>
               {" "}của Quỹ Hỗ trợ nhân lực nhân tài Việt Nam.
             </span>
           </label>
@@ -263,7 +261,6 @@ function DonationForm({
 function PaymentQrStep({
   amount,
   name,
-  projectTitle,
   onClose,
 }: {
   amount: number
@@ -308,7 +305,6 @@ function PaymentQrStep({
         </div>
         <div className="flex justify-center">
           <div className="p-3 border-2 border-slate-200 rounded-xl bg-white shadow-sm">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={qrUrl}
               alt="Mã QR thanh toán VietQR"
@@ -373,7 +369,7 @@ export function DonationModal({ isOpen, onClose, projectTitle, remainingAmount }
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={handleClose} />
 
-      {/* Modal — wider to match BA mockup */}
+      {/* Modal */}
       <div className="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl flex flex-col max-h-[92vh]">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 shrink-0">

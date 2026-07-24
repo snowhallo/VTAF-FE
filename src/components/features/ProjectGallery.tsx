@@ -1,7 +1,4 @@
-"use client"
-
 import { useState, useEffect, useCallback } from "react"
-import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const MOCK_IMAGES = [
@@ -29,13 +26,10 @@ export function ProjectGallery() {
   return (
     <div className="flex flex-col gap-4">
       <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-slate-100 rounded-lg border border-slate-200 group">
-        <Image
+        <img
           src={MOCK_IMAGES[activeIndex]}
           alt="Hình ảnh thực tế dự án"
-          fill
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          className="object-cover transition-opacity duration-300"
-          priority
+          className="w-full h-full object-cover transition-opacity duration-300"
         />
         
         {/* Navigation Overlays */}
@@ -65,12 +59,10 @@ export function ProjectGallery() {
               activeIndex === index ? "border-[#006B3F] shadow-sm" : "border-transparent opacity-70 hover:opacity-100"
             }`}
           >
-            <Image
+            <img
               src={img}
               alt={`Hình thu nhỏ ${index + 1}`}
-              fill
-              sizes="(max-width: 768px) 33vw, 200px"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </button>
         ))}
