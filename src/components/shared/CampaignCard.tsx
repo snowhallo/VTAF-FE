@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { ProgressBar } from "@/components/shared/ProgressBar"
 import { ArrowRight, FolderKanban } from "lucide-react"
@@ -53,7 +53,7 @@ export function CampaignCard({
       {/* Tiêu đề có đường gạch trang trí */}
       <div className="flex items-center gap-3 mb-2">
         <h3 className="font-bold text-lg md:text-xl text-slate-900 line-clamp-1">
-          <Link to={`/campaigns/${id}`} className="hover:text-[#006B3F] transition-colors">
+          <Link href={`/campaigns/${id}`} className="hover:text-[#006B3F] transition-colors">
             {title}
           </Link>
         </h3>
@@ -95,7 +95,7 @@ export function CampaignCard({
             asChild
             className="bg-white/95 hover:bg-white text-slate-900 font-bold rounded-lg shadow-md hover:shadow-lg h-9 px-4 text-xs backdrop-blur-sm transition-all group-hover:translate-x-1"
           >
-            <Link to={`/campaigns/${id}`} className="flex items-center gap-1.5">
+            <Link href={`/campaigns/${id}`} className="flex items-center gap-1.5">
               <span>Xem các dự án trong chiến dịch</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#006B3F]" />
             </Link>

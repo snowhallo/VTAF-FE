@@ -1,83 +1,81 @@
-# Vietnam Talents Assistance Fund (VTAF) - Frontend Portal
+# VTAF Frontend (Vietnam Assistance & Foundation)
 
-Dự án Frontend cho **Quỹ Hỗ trợ Nhân tài Việt Nam (VTAF)**. Đây là nền tảng trực tuyến kết nối giữa Nhà trường (đề xuất học bổng), Người kiểm duyệt (xác thực hồ sơ) và Nhà tài trợ (theo dõi và đóng góp tài chính) nhằm bồi dưỡng, phát triển các nhân tài học thuật xuất sắc tại Việt Nam.
+Giao diện Web Nền tảng Từ thiện và Trợ giúp Xã hội VTAF (Vietnam Assistance & Foundation).
 
-Nền tảng được phát triển với định hướng khuyến tài, tập trung hỗ trợ học sinh/sinh viên giỏi, đạt thành tích cao trong học tập và các cuộc thi cấp tỉnh/quốc gia.
-
----
-
-## 🚀 Các Tính Năng Chính
-
-Nền tảng bao gồm trang chủ công khai giới thiệu dự án/chiến dịch và hệ thống **Dashboard phân quyền** cho 3 nhóm người dùng chính:
-
-1. **Cổng Nhà Trường (School Portal)**
-   - Đăng ký và quản lý các đề xuất hỗ trợ học bổng học thuật cho học sinh xuất sắc.
-   - Nhập thông tin thành tích học tập, đính kèm minh chứng (bảng điểm, bằng khen, chứng nhận giải thưởng).
-   - Quản lý các dự án đang kêu gọi, đã hoàn thành hoặc đang chờ phê duyệt.
-
-2. **Cổng Kiểm Duyệt (Reviewer Portal)**
-   - Rà soát các đề xuất học bổng từ phía nhà trường gửi lên.
-   - Phê duyệt, từ chối hoặc yêu cầu bổ sung thông tin hồ sơ học tập.
-   - Theo dõi tổng quan tiến độ kêu gọi quỹ của các dự án đang hoạt động.
-
-3. **Cổng Nhà Tài Trợ (Donor Portal)**
-   - Theo dõi lịch sử tài trợ chi tiết (số tiền, thời gian, dự án cụ thể mà khoản tiền đó hỗ trợ).
-   - Xem minh chứng giải ngân thực tế từ phía nhà trường cho học sinh.
-   - Theo dõi danh sách các dự án/nhân tài đã và đang đồng hành.
+Nền tảng minh bạch hóa các hoạt động thiện nguyện, kết nối các nhà tài trợ, tình nguyện viên và các dự án hỗ trợ cộng đồng trên toàn quốc.
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
+## 🚀 Công nghệ sử dụng (Tech Stack)
 
-- **Framework:** Next.js (App Router)
-- **Ngôn ngữ:** TypeScript
-- **Styling:** Tailwind CSS (Vanilla CSS & Tailwind Utility Classes)
-- **Icons:** Lucide React
-- **Quản lý trạng thái & UI:** React Hooks, CSS-in-JS, Tailwind components
-
----
-
-## 📦 Hướng Dẫn Setup và Chạy Dự Án
-
-### Yêu cầu hệ thống
-- **Node.js** (Khuyến nghị phiên bản LTS mới nhất - v18 hoặc v20)
-- **NPM** hoặc **Yarn**
-
-### Bước 1: Clone dự án
-Tải mã nguồn về máy local của bạn:
-```bash
-git clone git@github.com:snowhallo/VTAF-FE.git
-cd VTAF-FE
-```
-
-### Bước 2: Cấu hình và Cài đặt thư viện
-Cài đặt tất cả các gói phụ thuộc cần thiết cho dự án:
-```bash
-npm install
-```
-
-### Bước 3: Chạy dự án ở chế độ Development
-Khởi chạy máy chủ phát triển cục bộ:
-```bash
-npm run dev
-```
-Sau khi chạy lệnh trên, dự án sẽ khả dụng tại địa chỉ: [http://localhost:3000](http://localhost:3000)
-
-### Bước 4: Xây dựng dự án cho Production (Build & Start)
-Để build bản phân phối tối ưu hóa hiệu năng và chạy trên môi trường production:
-```bash
-# Xây dựng ứng dụng
-npm run build
-
-# Khởi chạy server production
-npm run start
-```
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **Library**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **UI Components**: Radix UI Primitives & Custom Design System
 
 ---
 
-## ⚙️ Các Cập Nhật & Tối Ưu Gần Đây
+## ✨ Tính năng chính
 
-- **Tối ưu hiển thị nhập tiền:** Tự động định dạng thêm dấu phẩy phân tách hàng nghìn khi người dùng nhập số tiền quyên góp (ví dụ: `1.000.000đ`), giúp dễ kiểm tra độ chính xác.
-- **Tích hợp logo nội bộ:** Chuyển đổi toàn bộ tài nguyên logo cũ (lỗi 404 online) sang logo nội bộ `/Logo_quy.jpg` được lưu trữ trực tiếp trong thư mục `public/`.
-- **Khắc phục lỗi hiển thị trên Dark Mode:** Loại bỏ xung đột CSS dark-mode trong `globals.css` để giữ giao diện sáng nguyên bản sắc nét, khắc phục hoàn toàn tình trạng chữ trắng trên nền trắng ở các ô nhập liệu.
-- **Tối ưu hiệu năng hình ảnh:** Thêm đầy đủ thuộc tính `sizes` cho tất cả các thẻ hình ảnh sử dụng thuộc tính `fill` để tối ưu tải trang.
+- 🏠 **Trang chủ (Landing Page)**: Giới thiệu các dự án nổi bật, chiến dịch gây quỹ, số liệu thống kê minh bạch.
+- 🎯 **Chiến dịch gây quỹ (`/campaigns`)**: Tìm kiếm, theo dõi và đóng góp cho các chiến dịch thiện nguyện.
+- 🏗️ **Quản lý Dự án (`/projects`)**: Thông tin chi tiết về các dự án đang được triển khai, tiến độ giải ngân.
+- 🔐 **Xác thực Người dùng (`/auth`)**: Đăng nhập, Đăng ký tài khoản nhà tài trợ / tổ chức.
+- 📊 **Bảng điều khiển (`/dashboard`)**: Quản lý lịch sử đóng góp, hồ sơ cá nhân và theo dõi tác động xã hội.
+- ⚖️ **Điều khoản & Pháp lý (`/legal`)**: Quy chế hoạt động, cam kết bảo mật và công khai tài chính.
+
+---
+
+## 🛠️ Hướng dẫn cài đặt & Chạy ứng dụng
+
+### Yêu cầu môi trường
+- Node.js >= 18.x
+- npm / yarn / pnpm
+
+### Các bước khởi chạy
+
+1. **Cài đặt các gói phụ thuộc (Dependencies):**
+   ```bash
+   npm install
+   ```
+
+2. **Chạy máy chủ phát triển (Development Server):**
+   ```bash
+   npm run dev
+   ```
+
+3. **Mở trình duyệt:**
+   Truy cập [http://localhost:3000](http://localhost:3000) để xem ứng dụng.
+
+4. **Xây dựng bản Production:**
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+---
+
+## 📁 Cấu trúc thư mục (Folder Structure)
+
+```text
+vtaf-frontend/
+├── public/                 # Tệp tĩnh (Images, SVGs, Logos)
+├── src/
+│   ├── app/                # App Router Pages & Routes
+│   │   ├── auth/           # Đăng nhập / Đăng ký
+│   │   ├── campaigns/      # Các chiến dịch từ thiện
+│   │   ├── dashboard/      # Bảng điều khiển người dùng
+│   │   ├── legal/          # Trang pháp lý & điều khoản
+│   │   ├── projects/       # Quản lý dự án
+│   │   ├── globals.css     # Cấu hình CSS toàn cục & Tailwind
+│   │   ├── layout.tsx      # Root Layout
+│   │   └── page.tsx        # Trang chủ VTAF
+│   ├── components/         # Reusable Components (UI, Shared)
+│   ├── lib/                # Utilities & Helper Functions
+│   └── utils/              # Helper Scripts
+├── .gitignore              # Cấu hình bỏ qua tệp tin Git
+├── next.config.ts          # Cấu hình Next.js
+└── package.json            # Thông tin dự án & phụ thuộc
+```

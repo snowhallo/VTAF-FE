@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom"
+"use client";
+
+import Link from "next/link"
 import { MapPin, Phone, Mail } from "lucide-react"
 
 export function Footer() {
@@ -10,7 +12,7 @@ export function Footer() {
 
           {/* ── Col 1: Logo + tagline ── */}
           <div className="flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="relative w-12 h-12 overflow-hidden rounded-full border border-slate-200 shrink-0">
                 <img
                   src="/Logo_quy.jpg"
@@ -42,7 +44,7 @@ export function Footer() {
                 { label: "Liên hệ", href: "/contact" },
               ].map(({ label, href }) => (
                 <li key={href}>
-                  <Link to={href} className="text-slate-600 hover:text-[#006B3F] transition-colors">
+                  <Link href={href} className="text-slate-600 hover:text-[#006B3F] transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -79,8 +81,8 @@ export function Footer() {
         <div className="container mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-slate-500">
           <p>©{new Date().getFullYear()} Quỹ Hỗ trợ Nhân tài Việt Nam. Bảo lưu mọi quyền.</p>
           <div className="flex items-center gap-4">
-            <Link to="/terms" className="hover:text-[#006B3F] transition-colors">Điều khoản &amp; Điều kiện</Link>
-            <Link to="/privacy" className="hover:text-[#006B3F] transition-colors">Chính sách bảo mật</Link>
+            <Link href="/terms" className="hover:text-[#006B3F] transition-colors">Điều khoản &amp; Điều kiện</Link>
+            <Link href="/privacy" className="hover:text-[#006B3F] transition-colors">Chính sách bảo mật</Link>
           </div>
         </div>
       </div>

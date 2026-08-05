@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 import { ProgressBar } from "@/components/shared/ProgressBar"
@@ -43,8 +43,8 @@ export function ProjectCard({
     if (daysLeft <= 7) {
       return {
         text: `Còn ${daysLeft} ngày`,
-        badgeStyle: "bg-rose-50 text-rose-700 border-rose-200/80 font-bold animate-pulse",
-        iconStyle: "text-rose-600",
+        badgeStyle: "font-bold animate-pulse-bold border",
+        iconStyle: "text-inherit",
       }
     }
     return {
@@ -58,7 +58,7 @@ export function ProjectCard({
 
   return (
     <Card className="overflow-hidden flex flex-col group card-hover-effect border border-slate-200/80 bg-white rounded-2xl shadow-sm hover:shadow-xl hover:border-[#006B3F]/30">
-      <Link to={`/projects/${id}`} className="relative h-56 w-full overflow-hidden block">
+      <Link href={`/projects/${id}`} className="relative h-56 w-full overflow-hidden block">
         <img
           src={imageUrl}
           alt={title}
@@ -74,7 +74,7 @@ export function ProjectCard({
       
       <CardContent className="p-5 flex-1 flex flex-col">
         <h3 className="font-semibold text-base md:text-lg line-clamp-2 mb-4 group-hover:text-[#006B3F] transition-colors leading-snug">
-          <Link to={`/projects/${id}`}>{title}</Link>
+          <Link href={`/projects/${id}`}>{title}</Link>
         </h3>
         
         <div className="mt-auto space-y-4">

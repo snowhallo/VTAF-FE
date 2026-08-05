@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { X, User, Mail, Loader2, Check, Copy, ChevronRight, MessageSquare } from "lucide-react"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 interface DonationModalProps {
@@ -162,9 +162,9 @@ function DonationForm({
           <p className="text-sm font-semibold text-slate-800 mb-1">Thông tin nhà tài trợ</p>
           <p className="text-xs text-slate-500 mb-3">
             Vui lòng{" "}
-            <Link to="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng ký</Link>
+            <Link href="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng ký</Link>
             {" "}hoặc{" "}
-            <Link to="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng nhập</Link>
+            <Link href="/auth" className="text-[#006B3F] hover:underline font-medium">Đăng nhập</Link>
             {" "}để theo dõi hành trình ủng hộ của mình.
           </p>
 
@@ -233,7 +233,7 @@ function DonationForm({
             />
             <span className="text-xs text-slate-600 leading-relaxed">
               Bằng việc ủng hộ, bạn đã đồng ý với{" "}
-              <Link to="/terms" target="_blank" className="text-[#006B3F] hover:underline font-medium">
+              <Link href="/terms" target="_blank" className="text-[#006B3F] hover:underline font-medium">
                 Điều khoản &amp; Điều kiện
               </Link>
               {" "}của Quỹ Hỗ trợ nhân lực nhân tài Việt Nam.

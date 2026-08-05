@@ -8,21 +8,14 @@ interface ShareModalProps {
   projectUrl?: string
 }
 
-// ─── Official Zalo SVG Icon ──────────────────────────────────────────────────
-function ZaloIcon({ className = "w-6 h-6" }: { className?: string }) {
+// ─── Official Zalo Image Icon ──────────────────────────────────────────────────
+function ZaloIcon({ className = "w-10 h-10" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="500" height="500" rx="120" fill="#0068FF" />
-      {/* Official Zalo Typographic Logo Path */}
-      <path
-        d="M178.6 307.2C167.8 307.2 159 298.4 159 287.6C159 276.8 167.8 268 178.6 268C189.4 268 198.2 276.8 198.2 287.6C198.2 298.4 189.4 307.2 178.6 307.2ZM178.6 230C167.8 230 159 221.2 159 210.4C159 199.6 167.8 190.8 178.6 190.8C189.4 190.8 198.2 199.6 198.2 210.4C198.2 221.2 189.4 230 178.6 230ZM338.8 307.2H230.2V288.6L307.6 211.2H230.2V188.8H338.8V207.4L261.4 284.8H338.8V307.2Z"
-        fill="white"
-      />
-      <path
-        d="M141.2 321.4C122.4 321.4 107.2 306.2 107.2 287.4V210.6C107.2 191.8 122.4 176.6 141.2 176.6H358.8C377.6 176.6 392.8 191.8 392.8 210.6V287.4C392.8 306.2 377.6 321.4 358.8 321.4H141.2ZM141.2 196.6C133.5 196.6 127.2 202.9 127.2 210.6V287.4C127.2 295.1 133.5 301.4 141.2 301.4H358.8C366.5 301.4 372.8 295.1 372.8 287.4V210.6C372.8 202.9 366.5 196.6 358.8 196.6H141.2Z"
-        fill="white"
-      />
-    </svg>
+    <img
+      src="/Icon_of_Zalo.svg.webp"
+      alt="Zalo Icon"
+      className={`${className} object-contain rounded-xl shadow-xs`}
+    />
   )
 }
 
